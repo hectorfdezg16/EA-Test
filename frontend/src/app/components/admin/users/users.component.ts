@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from '../../models/user';
+import { User } from '../../../models/user';
 
 //we import all our services then we initialize them to use on providers point
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../services/user.service';
 
 declare var M: any;
 

@@ -8,6 +8,7 @@ userCtrl.getAllUsers = async (req, res) => {
     const users = await User.find()
     res.json(users)
 }
+
 userCtrl.createUser = async (req, res) => {
 
     console.log(req.body)
@@ -55,8 +56,8 @@ userCtrl.updateUser = async (req, res) => {
     await User.findByIdAndUpdate(id,{$set: modifiedUser}, {new: true})
 
     res.json({status: 'Usuario actualizado correctamente'})
-
 }
+
 userCtrl.getUser = async (req, res) => {
 
     console.log(req.params)
@@ -64,7 +65,6 @@ userCtrl.getUser = async (req, res) => {
     const user = await User.findById(req.params.id)
 
     res.send(user)
-
 }
 
 module.exports = userCtrl;

@@ -1,15 +1,19 @@
 <nav>
   <div class="nav-wrapper black">
-    <a href="#" class="brand-logo">SmartStock</a>
+    <a href="" class="brand-logo"><i class="material-icons">near_me</i>SmartStock</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#">Premium</a></li>
-      <li><a href="#">Support</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Sign up</a></li>
-      <li><a href="#">Log in</a></li>
+      <li><a href="premium">Premium</a></li>
+      <li><a href="support">Support</a></li>
+      <li><a href="user/signup">Sign up</a></li>
+      <li><a href="user/login">Log in</a></li>
+      <li><a href="admin/backoffice">Back office</a></li>
+      <li><a href="#"><i class="material-icons">add</i></a></li>
     </ul>
   </div>
 </nav>
 
 <!--we call user's component selector-->
-<app-users></app-users>
+<!--nothing for this moment-->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

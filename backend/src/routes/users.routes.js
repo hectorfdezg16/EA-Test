@@ -5,6 +5,7 @@ const router = Router()
 const usersCtrl = require('../controllers/users.controller.js')
 
 //we put all routes in this file & we will se in the future
+//_id, req.params.id, _id
 router.get('/', usersCtrl.getAllUsers);
 router.post('/', usersCtrl.createUser);
 router.delete('/:id', usersCtrl.deleteUser);
@@ -27,6 +28,7 @@ function verifyToken(req, res, next) {
     }
 
     //exemple authorization header field = ['Bearer', 'token...']
+    //Bearer ij45656567657
     const token = req.headers.authorization.split(' ')[1]
     if(token == 'null'){
         return res.status(401).send('Unauthorized acces!');
@@ -37,6 +39,8 @@ function verifyToken(req, res, next) {
     console.log(payload);
 
     //we save id of the payload on a property
+    //_id: dgdg
+    //name: 
     req.userId = payload._id;
     next();
 }

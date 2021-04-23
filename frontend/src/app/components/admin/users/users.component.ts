@@ -15,9 +15,10 @@ declare var M: any;
 })
 export class UsersComponent implements OnInit {
 
-  //be careful, this constructor was private!!! 
+  //be careful, this constructor was private!!! --> public
   constructor(public userService: UserService) { }
 
+  //prove
   //if the app starts then we will execute getAllUsers
   ngOnInit(): void {
     this.getAllUsers();

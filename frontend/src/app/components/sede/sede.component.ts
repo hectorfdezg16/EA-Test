@@ -61,6 +61,7 @@ export class SedeComponent implements OnInit {
   updateSede(sede: Sede){
     this.sedeService.selectedSede = sede;
   }
+  //funcion
 
   deleteSede(_id: string, form: NgForm){
     if(confirm('Are you sure about this?')){

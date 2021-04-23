@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 //my-database = Project's database (originally empty)
-const URI = 'mongodb://localhost/my-database'
+const URI = 'mongodb://localhost/sede-covid-database'
 
 mongoose
 .connect(URI, {

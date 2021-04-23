@@ -9,15 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 //we add some components for WebApp
 import { HomeComponent } from './components/home/home.component';
-import { PremiumComponent } from './components/premium/premium.component';
-import { SupportComponent } from './components/support/support.component';
-import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 
-//services API
-import { UserService } from './services/user.service';
+//importamos nuestro componente de sede
+import { SedeComponent } from './components/sede/sede.component';
+
+//hemos cambiado nuestro servicio por el de sede
+//import { UserService } from './services/user.service';
+import { SedeService } from './services/sede.service';
 
 //routes
 import { AppRoutingModule } from './app.routing';
@@ -26,15 +26,11 @@ import { AuthorizationComponent } from './components/admin/authorization/authori
 @NgModule({
   declarations: [
     AppComponent,
+    SedeComponent,
     UsersComponent,
     HomeComponent,
-    PremiumComponent,
-    SupportComponent,
-    LoginComponent,
     SignupComponent,
-    ProfileComponent,
-    Page404Component,
-    AuthorizationComponent
+    Page404Component
   ],
   imports: [
     BrowserModule,
@@ -42,7 +38,7 @@ import { AuthorizationComponent } from './components/admin/authorization/authori
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [SedeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+
+        <!--main form-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body p-4">
+
+                    <!--when we send the form we give the userForm (all inputs & outputs)-->
+                    <form #sedeForm="ngForm" (ngSubmit)="addSede(sedeForm)">
+                        <!--user id-->
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="sedeService.selectedSede._id">
+                        
+                        <div class="form-group">
+                            <div class="input-field col s12">
+                                <input type="text" name="nombre" #username="ngModel" 
+                                [(ngModel)]="sedeService.selectedSede.nombre" 
+                                placeholder="Entra tu nombre" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-field col s12">
+                                <input type="text" name="localizacion" #email="ngModel" 
+                                [(ngModel)]="sedeService.selectedSede.localizacion" 
+                                placeholder="Entra tu localizacion" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-field col s12">
+                                <input type="text" name="poblacion" #password="ngModel" 
+                                [(ngModel)]="sedeService.selectedSede.poblacion" 
+                                placeholder="Enter tu poblacion" class="form-control">
+                            </div>
+                        </div>
+
+                        <!--main buttons-->
+                        <button class="btn btn-primary mr-2" (click)="resetForm(sedeForm)">Clean</button>
+                        <button class="btn btn-secondary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--in this part we will see all users in the system-->
+        <div class="col-md-8">
+            <table class="table table-stripped">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Localizacion</th>
+                    <th>Poblacion</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sede of sedeService.sedes">
+                        <td>{{ sede.nombre }}</td>
+                        <td>{{ sede.localizacion }}</td>
+                        <td>{{ sede.poblacion }}</td>
+                        <td>
+                            <a (click)="updateSede(sede)" class="btn btn-secondary btn-sm"><i class="material-icons">edit</i></a>
+                            <a (click)="deleteSede(sede._id, sedeForm)" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

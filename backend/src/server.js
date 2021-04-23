@@ -23,10 +23,10 @@ const app = express();
  * const swaggerOptions = {
     swaggerDefinition: {
         info: {
-            title: "SmartStock API",
-            description: "Hi, this is the info of our API! Enjoy it!",
+            title: "Sede vacunación EXAMEN",
+            description: "Este es un proyecto importante para poder vacunar a la gente",
             contact: {
-                name: "EA Group 1"
+                name: "Sede covid programmers"
             },
             version: "1.0.0"
         }
@@ -46,6 +46,6 @@ app.use(express.json());
 app.use(cors({origin: 'http://localhost:4200'}));
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/users", require('./routes/users.routes'))
+app.use("/api/sedes", require('./routes/sedes.routes'))
 
 module.exports = app;
